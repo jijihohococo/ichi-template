@@ -270,7 +270,7 @@ class TestComponent extends Component{
 
 ```
 
-<i>In your view php file<i>
+<i>In your view php file</i>
 
 ```php
 
