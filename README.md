@@ -12,6 +12,7 @@ This package is Open Source According to [MIT license](LICENSE.md)
 * [Set Up Template Base Directory Path](#set-up-template-base-directory-path)
 * [Showing View](#showing-view)
 * [Showing Error Messages](#showing-error-messages)
+* [Showing Success Messages](#showing-success-messages)
 * [Getting File Name](#getting-file-name)
 * [Section And Content](#section-and-content)
 * [Sharing Data In All Views](#sharing-data-in-all-views)
@@ -136,6 +137,24 @@ You can get error messages with 'errors' array variable in your view php files
 echo $errors['name_error']. '<br>';
 
 echo $errors['email_error'];
+```
+
+### Showing Success Messages
+
+You can add success messages
+
+```php
+
+setSuccess([
+	'message' => 'registeration is completed'
+]);
+```
+You can get sucess messages with 'success' array variable in your view php views
+
+```php
+
+echo $success['message'];
+
 ```
 ### Getting File Name
 

@@ -136,3 +136,9 @@ if(!function_exists('setErrors')){
 		View::setErrors($errors);
 	}
 }
+
+if(!function_exists('setSuccess')){
+	function setSuccess(array $success){
+		View::setSuccess($success);
+	}
+}

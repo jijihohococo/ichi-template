@@ -10,6 +10,7 @@ class View{
 	use BasePath;
 
 	private static $errors=[];
+	private static $success=[];
 	private static $share=[];
 	private static $numberOfStations=0;
 	private static $currentSection;
@@ -28,6 +29,10 @@ class View{
 
 	public static function setErrors(array $errors){
 		self::$errors=$errors;
+	}
+
+	public static function setSuccess(array $success){
+		self::$success=$success;
 	}
 
 	public static function getTitle(){
@@ -51,6 +56,9 @@ class View{
 		$errors=[];
 		if(!empty(self::$errors)){
 			$errors=self::$errors;
+		}
+		if(!empty(self::$success)){
+			$success=self::$success;
 		}
 		self::showRender($data);
 		self::showRender(self::$share);
