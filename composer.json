@@ -1,0 +1,25 @@
+{
+   "name": "jijihohococo/ichi-template",
+   "type": "library",
+   "description": "PHP Template",
+   "keywords": ["php template","php","template","frontend"],
+   "license": "MIT",
+   "authors": [
+      {
+         "name": "Lin Aung",
+         "email": "jijihohococo@gmail.com"
+      }
+   ],
+   "require": {
+      "php": ">=7.0 || >=8.0"
+   },
+   "autoload": {
+        "psr-4": {
+            "JiJiHoHoCoCo\\IchiTemplate\\": "src/"
+        },
+        "files": [
+         "src/helpers.php"
+        ]
+    },
+   "minimum-stability": "dev"
+}
