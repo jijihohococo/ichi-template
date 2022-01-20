@@ -1,11 +1,11 @@
 <?php
 
-use JiJiHoHoCoCo\IchiTemplate\Template\{View,Component};
-use JiJiHoHoCoCo\IchiTemplate\Component\ComponentSetting;
+use JiJiHoHoCoCo\IchiTemplate\Template\View;
+use JiJiHoHoCoCo\IchiTemplate\Component\{Component,ComponentSetting};
 
 if(!function_exists('checkPHP')){
 	function checkPHP(string $file){
-		$pathInfo = pathinfo($filename);
+		$pathInfo = pathinfo($file);
 		return $pathInfo['extension']=='php';
 	}
 }
@@ -123,7 +123,7 @@ if(!function_exists('component')){
 			if($newClass instanceof Component && method_exists($newClass,'render')){
 				return $newClass->render($newParameters);
 			}else{
-				throw new Exception("You need to extend JiJiHoHoCoCo\IchiTemplate\Template\Component and include render function in your {$class}", 1);
+				throw new Exception("You need to extend JiJiHoHoCoCo\IchiTemplate\Component\Component and include render function in your {$class}", 1);
 			}
 		}else{
 			throw new Exception("Class is not exists", 1);
