@@ -8,6 +8,7 @@ This package is Open Source According to [MIT license](LICENSE.md)
 
 ## Table Of Contents
 
+* [Acknowledgement](#acknowledgement)
 * [Installion](#installion)
 * [Set Up Template Base Directory Path](#set-up-template-base-directory-path)
 * [Showing View](#showing-view)
@@ -19,10 +20,16 @@ This package is Open Source According to [MIT license](LICENSE.md)
 * [Preventing XSS Attack](#preventing-xss-attack)
 * [Components](#components)
 
+### Acknowledgement
+
+I really thanks to my mother for everything. She is the best for me.
+
 ### Installation
 
 ```php
+
 composer require jijihohococo/ichi-template:dev-master
+
 ```
 
 ### Set Up Template Base Directory Path
