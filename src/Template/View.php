@@ -2,7 +2,7 @@
 
 namespace JiJiHoHoCoCo\IchiTemplate\Template;
 
-use JiJiHoHoCoCo\IchiTemplate\Trait\BasePath;
+use JiJiHoHoCoCo\IchiTemplate\Traits\BasePath;
 
 use Exception;
 class View{

@@ -1,6 +1,6 @@
 <?php
 
-namespace JiJiHoHoCoCo\IchiTemplate\Trait;
+namespace JiJiHoHoCoCo\IchiTemplate\Traits;
 
 trait BasePath{
 
