@@ -2,7 +2,7 @@
 
 namespace JiJiHoHoCoCo\IchiTemplate\Component;
 
-use JiJiHoHoCoCo\IchiTemplate\Trait\BasePath;
+use JiJiHoHoCoCo\IchiTemplate\Traits\BasePath;
 
 class ComponentSetting{
 
