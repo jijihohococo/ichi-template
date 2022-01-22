@@ -177,6 +177,14 @@ echo s('script.css');
 
 You can apply template system as shown as below
 
+Firstly, you must show your view php file
+
+```php
+
+return view('show_data.php');
+
+```
+
 <i>In your template main php file</i>
 ```html
 <!DOCTYPE html>
