@@ -9,7 +9,7 @@ This package is Open Source According to [MIT license](LICENSE.md)
 ## Table Of Contents
 
 * [Acknowledgement](#acknowledgement)
-* [Installion](#installion)
+* [Installation](#installation)
 * [Set Up Template Base Directory Path](#set-up-template-base-directory-path)
 * [Showing Views](#showing-views)
 * [Showing Error Messages](#showing-error-messages)
