@@ -291,7 +291,7 @@ You can use class as your component to show view php files
 
 ```php
 
-namespace App\Views\Components;
+namespace App\Components;
 use JiJiHoHoCoCo\IchiTemplate\Component\Component;
 
 
@@ -308,7 +308,7 @@ class TestComponent extends Component{
 
 ```php
 
-component('App\Views\Components\TestComponent');
+component('App\Components\TestComponent');
 
 ```
 
@@ -318,7 +318,7 @@ You can use constructor in your component class to pass the data
 
 ```php
 
-namespace App\Views\Components;
+namespace App\Components;
 use JiJiHoHoCoCo\IchiTemplate\Component\Component;
 
 
@@ -342,7 +342,7 @@ class TestComponent extends Component{
 
 ```php
 
-component('App\Views\Components\TestComponent',[
+component('App\Components\TestComponent',[
 	'name' => 'Test Data'
 ]);
 
@@ -354,7 +354,7 @@ You can set the base directory path for your component classes.
 
 use JiJiHoHoCoCo\IchiTemplate\Component\ComponentSetting;
 
-ComponentSetting::setPath('App\Views\Components');
+ComponentSetting::setPath('App\Components');
 
 ```
 
