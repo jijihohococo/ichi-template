@@ -64,7 +64,7 @@ class ".$createdFile." extends Component{
 
 	private function checkContent(string $command,string $defaulFolder,string $createdFile){
 		switch ($command) {
-			case $this->modelCommandLine:
+			case $this->componentCommandLine:
 			return $this->makeComponentContent($defaulFolder,$createdFile);
 			break;
 			

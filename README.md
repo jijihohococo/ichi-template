@@ -304,7 +304,44 @@ class TestComponent extends Component{
 
 ```
 
-<i>In your view php file</i>
+You can create the component class with the commandline.
+
+Firstly you need to created the file named "ichi" under your project folder and use the below code in this file
+
+```php
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+use JiJiHoHoCoCo\IchiTemplate\Command\TemplateCommand;
+
+
+$templateCommand=new TemplateCommand;
+$templateCommand->run(__DIR__,$argv);
+
+```
+
+And then you can create the component in your commandline
+
+```php
+
+php ichi make:component TestComponent
+
+```
+
+The default file folder is "app/Components". So after making command, the component you created will be in the this default file folder. If you want to change the default folder path, you can change it in your "ichi" file.
+
+
+```php
+
+$templateCommand=new TemplateCommand;
+$templateCommand->setPath('new_app/Components');
+$templateCommand->run(__DIR__,$argv);
+
+```
+
+<i>In your view php file, you can now call your component</i>
 
 ```php
 
