@@ -72,8 +72,9 @@ class View{
 			$extendData=self::$extendData;
 			self::$extend=NULL;
 			self::$extendData=[];
-			self::render($extend,$extendData);
+			return self::render($extend,$extendData);
 		}
+		return TRUE;
 	}
 
 	public static function section(string $content,string $title=NULL){

@@ -12,7 +12,7 @@ if(!function_exists('checkPHP')){
 
 if(!function_exists('view')){
 	function view(string $view,array $data=[]){
-		View::render($view,$data);
+		return View::render($view,$data);
 	}
 }
 
