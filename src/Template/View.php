@@ -60,8 +60,14 @@ class View{
 		if(!empty(self::$success)){
 			$success=self::$success;
 		}
-		self::showRender($data);
-		self::showRender(self::$share);
+		if(!empty($data) ){
+			self::checkRequest($data);
+			extract($data);
+		}
+		if(!empty(self::$share) ){
+			self::checkRequest(self::$share);
+			extract(self::$share);
+		}
 		if(file_exists($path.$view) && checkPHP($view) ){
 			require $path . $view;
 		}else{
@@ -115,16 +121,12 @@ class View{
 		}
 	}
 
-	private static function showRender(array $data=[]){
+	public static function include(string $view,array $data=[]){
+		$path=self::getPath();
 		if(!empty($data) ){
 			self::checkRequest($data);
 			extract($data);
 		}
-	}
-
-	public static function include(string $view,array $data=[]){
-		$path=self::getPath();
-		self::showRender($data);
 		if(file_exists($path.$view)){
 			include $path . $view;
 		}else{
@@ -134,7 +136,10 @@ class View{
 
 	public static function includeOnce(string $view,array $data=[]){
 		$path=self::getPath();
-		self::showRender($data);
+		if(!empty($data) ){
+			self::checkRequest($data);
+			extract($data);
+		}
 		if(file_exists($path.$view)){
 			include_once $path . $view;
 		}else{
@@ -144,7 +149,10 @@ class View{
 
 	public static function require(string $view,array $data=[]){
 		$path=self::getPath();
-		self::showRender($data);
+		if(!empty($data) ){
+			self::checkRequest($data);
+			extract($data);
+		}
 		if(file_exists($path.$view)){
 			require $path . $view;
 		}else{
@@ -154,7 +162,10 @@ class View{
 
 	public static function requireOnce(string $view,array $data=[]){
 		$path=self::getPath();
-		self::showRender($data);
+		if(!empty($data) ){
+			self::checkRequest($data);
+			extract($data);
+		}
 		if(file_exists($path.$view)){
 			require_once $path . $view;
 		}else{
