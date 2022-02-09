@@ -28,7 +28,7 @@ I really thanks to my mother for everything. She is the best for me.
 
 ```php
 
-composer require jijihohococo/ichi-template:dev-master
+composer require jijihohococo/ichi-template
 
 ```
 
