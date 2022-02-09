@@ -90,6 +90,17 @@ public function showData(){
 
 ```
 
+<b>You can also call your php file without '.php' file extension</b>
+
+```php
+
+public function showData(){
+
+	return view('show_data');
+}
+
+```
+
 You can use called data in your view file which is calling from "view" function
 
 <i>In your_view_php_file_path</i>
@@ -120,6 +131,14 @@ includeView('include_file.php',[
 
 ```
 
+<b>You can also call your php file without '.php' file extension</b>
+
+```php
+
+includeView('include_file');
+
+```
+
 'includeView' function will show the file by using 'include' function
 'includeOnceView' function will show the by using 'include_once' function 
 'requireView' function will show the file by using 'require' function
@@ -141,9 +160,17 @@ setErrors([
 You can get error messages with 'errors' array variable in your view php files
 
 ```php
+if(isset($errors['name_error'])){
+
 echo $errors['name_error']. '<br>';
 
-echo $errors['email_error'];
+}
+
+if(isset($errors['email_error'])){
+
+echo $errors['email_error'] . '<br>';
+
+}
 ```
 
 ### Showing Success Messages
@@ -160,8 +187,11 @@ You can get sucess messages with 'success' array variable in your view php views
 
 ```php
 
+if(isset($success['message'])){
+
 echo $success['message'];
 
+}
 ```
 ### Getting File Name
 
@@ -214,6 +244,15 @@ section('content');
 
 <?php endSection(); ?>
 ```
+
+<b>You can also call your php file without '.php' file extension</b>
+
+```php
+
+extend('main');
+
+```
+
 
 In your view php file, You must call your template main php file with 'extend' function firstly.
 You must add 'content' name in your 'section' function.

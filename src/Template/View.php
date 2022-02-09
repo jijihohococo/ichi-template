@@ -113,7 +113,7 @@ class View{
 	}
 
 	public static function extend(string $file,array $data=[]){
-		self::$extend=$file;
+		self::$extend=getViewPath($file);
 		self::$extendData=$data;
 	}
 
