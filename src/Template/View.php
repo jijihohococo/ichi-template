@@ -51,9 +51,11 @@ class View{
 	}
 
 	public static function render(string $view,array $data=[]){
+		$view=getViewPath($view);
 		$path=self::getPath();
 		
 		$errors=[];
+		$success=[];
 		if(!empty(self::$errors)){
 			$errors=self::$errors;
 		}
@@ -122,6 +124,7 @@ class View{
 	}
 
 	public static function include(string $view,array $data=[]){
+		$view=getViewPath($view);
 		$path=self::getPath();
 		if(!empty($data) ){
 			self::checkRequest($data);
@@ -135,6 +138,7 @@ class View{
 	}
 
 	public static function includeOnce(string $view,array $data=[]){
+		$view=getViewPath($view);
 		$path=self::getPath();
 		if(!empty($data) ){
 			self::checkRequest($data);
@@ -148,6 +152,7 @@ class View{
 	}
 
 	public static function require(string $view,array $data=[]){
+		$view=getViewPath($view);
 		$path=self::getPath();
 		if(!empty($data) ){
 			self::checkRequest($data);
@@ -161,6 +166,7 @@ class View{
 	}
 
 	public static function requireOnce(string $view,array $data=[]){
+		$view=getViewPath($view);
 		$path=self::getPath();
 		if(!empty($data) ){
 			self::checkRequest($data);

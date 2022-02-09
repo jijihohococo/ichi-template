@@ -3,6 +3,14 @@
 use JiJiHoHoCoCo\IchiTemplate\Template\View;
 use JiJiHoHoCoCo\IchiTemplate\Component\{Component,ComponentSetting};
 
+if(!function_exists('getViewPath')){
+	function getViewPath(string $view){
+		$viewArray=explode('.', $view);
+		$countViewArray=count($viewArray);
+		return $viewArray[$countViewArray-1]=='php' ? $view : $view . '.php';
+	}
+}
+
 if(!function_exists('checkPHP')){
 	function checkPHP(string $file){
 		$pathInfo = pathinfo($file);
