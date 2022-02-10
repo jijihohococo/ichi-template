@@ -48,9 +48,16 @@ if(!function_exists('requireOnceView')){
 	}
 }
 
+if(!function_exists('old')){
+	function old($data,$default=null){
+
+		echo isset($_REQUEST[$data]) ? $_REQUEST[$data] : e($default);
+	}
+}
+
 if(!function_exists('e')){
-	function e(string $data){
-		return htmlspecialchars($data, ENT_QUOTES);
+	function e(string $data=NULL){
+		return $data==NULL ? $data : htmlspecialchars($data, ENT_QUOTES);
 	}
 }
 

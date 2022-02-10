@@ -19,6 +19,7 @@ This package is Open Source According to [MIT license](LICENSE.md)
 * [Sharing Data In All Views](#sharing-data-in-all-views)
 * [Preventing XSS Attack](#preventing-xss-attack)
 * [Components](#components)
+* [Show Old Request Data](#show-old-request-data)
 
 ### Acknowledgement
 
@@ -443,3 +444,23 @@ component('TestComponent',[
 ]);
 
 ```
+
+## Show Old Request Data
+
+You can show old request data after submitting in your php file
+
+```html
+
+<input type="text" name="test" value="<?php old('test'); ?>">
+
+```
+
+If you want to set default data if the request is not isset
+
+```php
+
+old('test','Default Test');
+
+```
+
+<b>This function is aimed to use in create and update data forms.</b>
