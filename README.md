@@ -14,7 +14,6 @@ This package is Open Source According to [MIT license](LICENSE.md)
 * [Showing Views](#showing-views)
 * [Showing Error Messages](#showing-error-messages)
 * [Showing Success Messages](#showing-success-messages)
-* [Getting File Name](#getting-file-name)
 * [Section And Content](#section-and-content)
 * [Sharing Data In All Views](#sharing-data-in-all-views)
 * [Preventing XSS Attack](#preventing-xss-attack)
@@ -193,15 +192,6 @@ if(isset($success['message'])){
 echo $success['message'];
 
 }
-```
-### Getting File Name
-
-If you want to get the file names (to connect javascript,css and image files) under your template base path
-
-```php
-
-echo s('script.css');
-
 ```
 
 ### Section And Content

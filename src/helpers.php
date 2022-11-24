@@ -61,12 +61,6 @@ if(!function_exists('e')){
 	}
 }
 
-if(!function_exists('s')){
-	function s(string $file){
-		return View::getPath() . $file;
-	}
-}
-
 if(!function_exists('getPath')){
 	function getPath(){
 		return View::getPath();
