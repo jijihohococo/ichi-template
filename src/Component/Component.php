@@ -2,7 +2,8 @@
 
 namespace JiJiHoHoCoCo\IchiTemplate\Component;
 
-abstract class Component{
+abstract class Component
+{
 
 	abstract public function render();
 

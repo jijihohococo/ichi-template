@@ -4,11 +4,13 @@ namespace JiJiHoHoCoCo\IchiTemplate\Component;
 
 use JiJiHoHoCoCo\IchiTemplate\Traits\BasePath;
 
-class ComponentSetting{
+class ComponentSetting
+{
 
 	use BasePath;
-	
-	public static function setPath(string $path){
-		self::$path = substr($path,0,-1) !== '\\' ? $path.'\\' : $path;
+
+	public static function setPath(string $path)
+	{
+		self::$path = substr($path, 0, -1) !== '\\' ? $path . '\\' : $path;
 	}
 }
