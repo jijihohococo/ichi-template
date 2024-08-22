@@ -123,7 +123,8 @@ class View
 			if (self::$numberOfStations - 1 > 1) {
 				self::$numberOfStations--;
 				self::$currentSection = self::$numberOfStations;
-			} elseif (self::$numberOfStations == 1) {
+			}
+			if (self::$numberOfStations == 1) {
 				self::$currentSection = NULL;
 				self::$numberOfStations = 0;
 			}
@@ -153,14 +154,15 @@ class View
 		try {
 			$view = getViewPath($view);
 			$path = self::getPath();
+			if (!file_exists($path . $view)) {
+				throw new Exception($path . $view . ' is not exist', 1);
+			}
 			if (!empty($data)) {
 				self::checkRequest($data);
 				extract($data);
 			}
 			if (file_exists($path . $view)) {
 				include $path . $view;
-			} else {
-				throw new Exception($path . $view . ' is not exist', 1);
 			}
 		} catch (Exception $e) {
 			return showErrorPage($e->getMessage());
@@ -172,14 +174,15 @@ class View
 		try {
 			$view = getViewPath($view);
 			$path = self::getPath();
+			if (!file_exists($path . $view)) {
+				throw new Exception($path . $view . ' is not exist', 1);
+			}
 			if (!empty($data)) {
 				self::checkRequest($data);
 				extract($data);
 			}
 			if (file_exists($path . $view)) {
 				include_once $path . $view;
-			} else {
-				throw new Exception($path . $view . ' is not exist', 1);
 			}
 		} catch (Exception $e) {
 			return showErrorPage($e->getMessage());
@@ -191,14 +194,15 @@ class View
 		try {
 			$view = getViewPath($view);
 			$path = self::getPath();
+			if (!file_exists($path . $view)) {
+				throw new Exception($path . $view . ' is not exist', 1);
+			}
 			if (!empty($data)) {
 				self::checkRequest($data);
 				extract($data);
 			}
 			if (file_exists($path . $view)) {
 				require $path . $view;
-			} else {
-				throw new Exception($path . $view . ' is not exist', 1);
 			}
 		} catch (Exception $e) {
 			return showErrorPage($e->getMessage());
@@ -210,14 +214,15 @@ class View
 		try {
 			$view = getViewPath($view);
 			$path = self::getPath();
+			if (!file_exists($path . $view)) {
+				throw new Exception($path . $view . ' is not exist', 1);
+			}
 			if (!empty($data)) {
 				self::checkRequest($data);
 				extract($data);
 			}
 			if (file_exists($path . $view)) {
 				require_once $path . $view;
-			} else {
-				throw new Exception($path . $view . ' is not exist', 1);
 			}
 		} catch (Exception $e) {
 			return showErrorPage($e->getMessage());
