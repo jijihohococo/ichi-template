@@ -8,17 +8,20 @@ This package is Open Source According to [MIT license](LICENSE.md)
 
 ## Table Of Contents
 
-* [Acknowledgement](#acknowledgement)
-* [Installation](#installation)
-* [Set Up Template Base Directory Path](#set-up-template-base-directory-path)
-* [Showing Views](#showing-views)
-* [Showing Error Messages](#showing-error-messages)
-* [Showing Success Messages](#showing-success-messages)
-* [Section And Content](#section-and-content)
-* [Sharing Data In All Views](#sharing-data-in-all-views)
-* [Preventing XSS Attack](#preventing-xss-attack)
-* [Components](#components)
-* [Show Old Request Data](#show-old-request-data)
+- [ICHI PHP TEMPLATE](#ichi-php-template)
+	- [License](#license)
+	- [Table Of Contents](#table-of-contents)
+		- [Acknowledgement](#acknowledgement)
+		- [Installation](#installation)
+		- [Set Up Template Base Directory Path](#set-up-template-base-directory-path)
+		- [Showing Views](#showing-views)
+		- [Showing Error Messages](#showing-error-messages)
+		- [Showing Success Messages](#showing-success-messages)
+		- [Section And Content](#section-and-content)
+		- [Sharing Data In All Views](#sharing-data-in-all-views)
+		- [Preventing XSS Attack](#preventing-xss-attack)
+		- [Components](#components)
+	- [Show Old Request Data](#show-old-request-data)
 
 ### Acknowledgement
 
@@ -365,7 +368,7 @@ The default file folder is "app/Components". So after making command, the compon
 
 ```php
 
-$templateCommand=new TemplateCommand;
+$templateCommand = new TemplateCommand;
 $templateCommand->setPath('new_app/Components');
 $templateCommand->run(__DIR__,$argv);
 
