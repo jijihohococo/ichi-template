@@ -39,18 +39,18 @@ class TemplateCommand
 namespace " . $this->getNamespace($defaulFolder) . ";
 use JiJiHoHoCoCo\IchiTemplate\Component\Component;
 
-class " . $createdFile . " extends Component{
+class " . $createdFile . " extends Component
+{
 
-	public function __construct(){
-
-
+	public function __construct()
+	{
+		//
 	}
 
-	public function render(){
-
-
+	public function render()
+	{
+		//
 	}
-
 }
 ";
 	}
