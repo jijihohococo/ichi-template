@@ -4,8 +4,7 @@ namespace JiJiHoHoCoCo\IchiORM\UI;
 
 class ErrorPage
 {
-
-    private static $errorPage = NULL;
+    private static $errorPage = null;
 
     public static function setErrorPage($errorPage)
     {
@@ -14,7 +13,7 @@ class ErrorPage
 
     public static function show(string $message, int $code)
     {
-        if (self::$errorPage == NULL) {
+        if (self::$errorPage == null) {
             return <<<HTML
 <!DOCTYPE html>
 <html lang="en">

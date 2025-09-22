@@ -4,11 +4,10 @@ namespace JiJiHoHoCoCo\IchiTemplate\Traits;
 
 trait BasePath
 {
+    private static $path;
 
-	private static $path;
-
-	public static function getPath()
-	{
-		return self::$path;
-	}
+    public static function getPath()
+    {
+        return self::$path;
+    }
 }
