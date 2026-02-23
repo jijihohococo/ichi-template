@@ -3,7 +3,6 @@
 use JiJiHoHoCoCo\IchiTemplate\Template\View;
 use JiJiHoHoCoCo\IchiTemplate\Component\{Component, ComponentSetting};
 use JiJiHoHoCoCo\IchiORM\UI\ErrorPage;
-use Exception;
 
 if (!function_exists('getViewPath')) {
     function getViewPath(string $view)
