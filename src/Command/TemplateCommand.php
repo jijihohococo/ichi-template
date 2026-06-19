@@ -7,13 +7,10 @@ use Exception;
 class TemplateCommand
 {
     private $path = 'app/Components';
-
     private $componentCommandLine = 'make:component';
-
     private $green = "\033[0;32m";
     private $red = "\033[01;31m";
     private $end = " \033[0m";
-
     private $createdFile;
 
     public function setPath(string $path)
@@ -26,16 +23,16 @@ class TemplateCommand
         return $this->path;
     }
 
-    private function getNamespace(string $defaulFolder)
+    private function getNamespace(string $defaultFolder)
     {
-        return str_replace('/', '\\', ucfirst($defaulFolder));
+        return str_replace('/', '\\', ucfirst($defaultFolder));
     }
 
-    private function makeComponentContent(string $defaulFolder, string $createdFile)
+    private function makeComponentContent(string $defaultFolder, string $createdFile)
     {
         return "<?php
 
-namespace " . $this->getNamespace($defaulFolder) . ";
+namespace " . $this->getNamespace($defaultFolder) . ";
 use JiJiHoHoCoCo\IchiTemplate\Component\Component;
 
 class " . $createdFile . " extends Component
@@ -72,11 +69,11 @@ class " . $createdFile . " extends Component
         }
     }
 
-    private function checkContent(string $command, string $defaulFolder, string $createdFile)
+    private function checkContent(string $command, string $defaultFolder, string $createdFile)
     {
         switch ($command) {
             case $this->componentCommandLine:
-                return $this->makeComponentContent($defaulFolder, $createdFile);
+                return $this->makeComponentContent($defaultFolder, $createdFile);
                 break;
         }
     }
@@ -121,15 +118,15 @@ class " . $createdFile . " extends Component
         if (count($argv) == 3 && $argv[1] == $this->componentCommandLine) {
             $command = $argv[1];
             $createdOption = $this->checkOption($command);
-            $defaulFolder = $this->checkPath($command);
-            $baseDir = $dir . '/' . $defaulFolder;
+            $defaultFolder = $this->checkPath($command);
+            $baseDir = $dir . '/' . $defaultFolder;
             if (substr($argv[2], -1) == '/') {
                 return $this->wrongCommand();
             }
             try {
                 if (!is_dir($baseDir)) {
                     $createdFolder = null;
-                    $basefolder = explode('/', $defaulFolder);
+                    $basefolder = explode('/', $defaultFolder);
                     foreach ($basefolder as $key => $folder) {
                         $createdFolder .= $key == 0 ? $dir . '/' . $folder : '/' . $folder;
                         if (!is_dir($createdFolder)) {
@@ -143,13 +140,12 @@ class " . $createdFile . " extends Component
                 if ($count == 1 && $inputFile[0] !== null && !file_exists($baseDir . '/' . $inputFile[0] . '.php')) {
                     $this->createdFile = $inputFile[0];
                     fopen($baseDir . '/' . $this->createdFile . '.php', 'w') or die('Unable to create ' . $createdOption);
-                    $createdFileContent = $this->checkContent($command, $defaulFolder, $this->createdFile);
+                    $createdFileContent = $this->checkContent($command, $defaultFolder, $this->createdFile);
                     file_put_contents($baseDir . '/' . $this->createdFile . '.php', $createdFileContent, LOCK_EX);
                     return $this->success($this->createdFile, $createdOption);
                 }
                 if ($count == 1 && $inputFile[0] !== null && file_exists($baseDir . '/' . $inputFile[0] . '.php')) {
                     $this->createdFile = $inputFile[0];
-
                     return $this->alreadyHave($this->createdFile, $createdOption);
                 }
                 if ($count > 1 && file_exists($baseDir . '/' . implode('/', $inputFile) . '.php')) {
@@ -163,7 +159,7 @@ class " . $createdFile . " extends Component
                     $newCreatedFolder = null;
                     foreach ($inputFile as $key => $folder) {
                         $currentFolder .= $key == 0 ? $baseDir . '/' . $folder : '/' . $folder;
-                        $newCreatedFolder .= $key == 0 ? $defaulFolder . '/' . $folder : '/' . $folder;
+                        $newCreatedFolder .= $key == 0 ? $defaultFolder . '/' . $folder : '/' . $folder;
                         if (!is_dir($currentFolder)) {
                             mkdir($currentFolder);
                         }
