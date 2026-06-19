@@ -130,16 +130,15 @@ if (!function_exists('component')) {
                     $newParameters = $data;
                 } elseif ($constructor !== null) {
                     $parameters = $constructor->getParameters();
-                    if (count($parameters) == count($data)) {
-                        foreach ($parameters as $key => $parameter) {
-                            if ($parameter->name !== null && isset($data[$parameter->name])) {
-                                $newParameters[$key] = $data[$parameter->name];
-                            }
+                    if (count($parameters) !== count($data)) {
+                        throw new Exception("Parameters are not same", 1);
+                    }
+                    foreach ($parameters as $key => $parameter) {
+                        if ($parameter->name !== null && isset($data[$parameter->name])) {
+                            $newParameters[$key] = $data[$parameter->name];
                         }
-                        if (count($parameters) !== count($newParameters)) {
-                            throw new Exception("Parameters are not same", 1);
-                        }
-                    } else {
+                    }
+                    if (count($parameters) !== count($newParameters)) {
                         throw new Exception("Parameters are not same", 1);
                     }
                 }
@@ -147,12 +146,10 @@ if (!function_exists('component')) {
                 $newClass = $reflectionClass->newInstanceArgs($newParameters);
                 if ($newClass instanceof Component && method_exists($newClass, 'render')) {
                     return $newClass->render($newParameters);
-                } else {
-                    throw new Exception("You need to extend JiJiHoHoCoCo\IchiTemplate\Component\Component and include render function in your {$class}", 1);
                 }
-            } else {
-                throw new Exception($class . " Class is not exists", 1);
+                throw new Exception("You need to extend JiJiHoHoCoCo\IchiTemplate\Component\Component and include render function in your {$class}", 1);
             }
+            throw new Exception($class . " Class is not exists", 1);
         } catch (Exception $e) {
             return showErrorPage($e->getMessage());
         }
