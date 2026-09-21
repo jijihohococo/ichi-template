@@ -33,6 +33,7 @@ class TemplateCommand
         return "<?php
 
 namespace " . $this->getNamespace($defaultFolder) . ";
+
 use JiJiHoHoCoCo\IchiTemplate\Component\Component;
 
 class " . $createdFile . " extends Component
