@@ -1,7 +1,8 @@
 <?php
 
 use JiJiHoHoCoCo\IchiTemplate\Template\View;
-use JiJiHoHoCoCo\IchiTemplate\Component\{Component, ComponentSetting};
+use JiJiHoHoCoCo\IchiTemplate\Component\Component;
+use JiJiHoHoCoCo\IchiTemplate\Component\ComponentSetting;
 use JiJiHoHoCoCo\IchiORM\UI\ErrorPage;
 
 if (!function_exists('getViewPath')) {
@@ -60,7 +61,7 @@ if (!function_exists('old')) {
     function old($data, $default = null)
     {
 
-        echo isset($_REQUEST[$data]) ? $_REQUEST[$data] : e($default);
+        echo isset($_REQUEST[$data]) ? e($_REQUEST[$data]) : e($default);
     }
 }
 
