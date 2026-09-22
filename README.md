@@ -75,7 +75,8 @@ You can show the views in your function like that
 
 ```php
 
-public function showData(){
+public function showData()
+{
 	//
 	return view('show_data.php');
 }
@@ -85,7 +86,8 @@ public function showData(){
 
 ```php
 
-public function showData(){
+public function showData()
+{
 	return view('show_data.php',[
 		'data' => 'Hello World'
 	]);
@@ -97,7 +99,8 @@ public function showData(){
 
 ```php
 
-public function showData(){
+public function showData()
+{
 
 	return view('show_data');
 }
@@ -283,8 +286,8 @@ You can share the data (variables) in all your views
 use JiJiHoHoCoCo\IchiTemplate\Template\View;
 
 View::share([
-'writer' => 'John',
-'book' => 'New Book' 
+	'writer' => 'John',
+	'book' => 'New Book' 
 ]);
 
 ```
@@ -325,12 +328,14 @@ You can use class as your component to show view php files
 ```php
 
 namespace App\Components;
+
 use JiJiHoHoCoCo\IchiTemplate\Component\Component;
 
+class TestComponent extends Component
+{
 
-class TestComponent extends Component{
-
-	public function render(){
+	public function render()
+	{
 		return view('componet_view.php');
 	}
 }
@@ -349,8 +354,7 @@ require __DIR__.'/vendor/autoload.php';
 
 use JiJiHoHoCoCo\IchiTemplate\Command\TemplateCommand;
 
-
-$templateCommand=new TemplateCommand;
+$templateCommand = new TemplateCommand;
 $templateCommand->run(__DIR__,$argv);
 
 ```
@@ -389,18 +393,21 @@ You can use constructor in your component class to pass the data
 ```php
 
 namespace App\Components;
+
 use JiJiHoHoCoCo\IchiTemplate\Component\Component;
 
-
-class TestComponent extends Component{
+class TestComponent extends Component
+{
 
 	private $name;
 
-	public function __construct(string $name){
+	public function __construct(string $name)
+	{
 		$this->name=$name;
 	}
 
-	public function render(){
+	public function render()
+	{
 		return view('componet_view.php',[
 			'name' => $this->name
 		]);
