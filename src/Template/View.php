@@ -100,7 +100,7 @@ class View
         }
     }
 
-    public static function section(string $content, string $title = null)
+    public static function section(string $content, ?string $title = null)
     {
         ob_start();
         self::$numberOfStations++;
