@@ -22,6 +22,7 @@ This package is Open Source According to [MIT license](LICENSE.md)
 		- [Preventing XSS Attack](#preventing-xss-attack)
 		- [Components](#components)
 	- [Show Old Request Data](#show-old-request-data)
+	- [Supported PHP Versions](#supported-php-versions)
 
 ### Acknowledgement
 
@@ -88,7 +89,7 @@ public function showData()
 
 public function showData()
 {
-	return view('show_data.php',[
+	return view('show_data.php', [
 		'data' => 'Hello World'
 	]);
 }
@@ -131,7 +132,7 @@ includeView('include_file.php');
 
 ```php
 
-includeView('include_file.php',[
+includeView('include_file.php', [
 	'data' => 'Hello World'
 ]);
 
@@ -408,7 +409,7 @@ class TestComponent extends Component
 
 	public function render()
 	{
-		return view('componet_view.php',[
+		return view('componet_view.php', [
 			'name' => $this->name
 		]);
 	}
@@ -419,7 +420,7 @@ class TestComponent extends Component
 
 ```php
 
-component('App\Components\TestComponent',[
+component('App\Components\TestComponent', [
 	'name' => 'Test Data'
 ]);
 
@@ -439,7 +440,7 @@ So you can call only component class name when you use 'component' function
 
 ```php
 
-component('TestComponent',[
+component('TestComponent', [
 	'name' => 'Test Data'
 ]);
 
@@ -464,3 +465,7 @@ old('test','Default Test');
 ```
 
 <b>This function is aimed to use in create and update data forms.</b>
+
+## Supported PHP Versions
+
+7.3, 7.4, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5

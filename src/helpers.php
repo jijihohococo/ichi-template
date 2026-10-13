@@ -66,7 +66,7 @@ if (!function_exists('old')) {
 }
 
 if (!function_exists('e')) {
-    function e(string $data = null)
+    function e(?string $data = null)
     {
         return $data == null ? $data : htmlspecialchars($data, ENT_QUOTES);
     }
@@ -80,7 +80,7 @@ if (!function_exists('getPath')) {
 }
 
 if (!function_exists('section')) {
-    function section(string $content, string $title = null)
+    function section(string $content, ?string $title = null)
     {
         View::section($content, $title);
     }
