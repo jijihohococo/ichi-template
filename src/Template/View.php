@@ -56,7 +56,7 @@ class View
                 throw new Exception("You can't set request key into render function", 1);
             }
         } catch (Exception $e) {
-            return showErrorPage($e->getMessage());
+            return showTemplateErrorPage($e->getMessage());
         }
     }
 
@@ -96,7 +96,7 @@ class View
             }
             return true;
         } catch (Exception $e) {
-            return showErrorPage($e->getMessage());
+            return showTemplateErrorPage($e->getMessage());
         }
     }
 
@@ -129,7 +129,7 @@ class View
             unset(self::$startSection[$currentSection]);
             ob_end_clean();
         } catch (Exception $e) {
-            return showErrorPage($e->getMessage());
+            return showTemplateErrorPage($e->getMessage());
         }
     }
 
@@ -162,7 +162,7 @@ class View
                 include $path . $view;
             }
         } catch (Exception $e) {
-            return showErrorPage($e->getMessage());
+            return showTemplateErrorPage($e->getMessage());
         }
     }
 
@@ -182,7 +182,7 @@ class View
                 include_once $path . $view;
             }
         } catch (Exception $e) {
-            return showErrorPage($e->getMessage());
+            return showTemplateErrorPage($e->getMessage());
         }
     }
 
@@ -202,7 +202,7 @@ class View
                 require $path . $view;
             }
         } catch (Exception $e) {
-            return showErrorPage($e->getMessage());
+            return showTemplateErrorPage($e->getMessage());
         }
     }
 
@@ -222,7 +222,7 @@ class View
                 require_once $path . $view;
             }
         } catch (Exception $e) {
-            return showErrorPage($e->getMessage());
+            return showTemplateErrorPage($e->getMessage());
         }
     }
 }
