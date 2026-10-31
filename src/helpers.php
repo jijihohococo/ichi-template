@@ -152,7 +152,7 @@ if (!function_exists('component')) {
             }
             throw new Exception($class . " Class is not exists", 1);
         } catch (Exception $e) {
-            return showErrorPage($e->getMessage());
+            return showTemplateErrorPage($e->getMessage());
         }
     }
 }
@@ -171,8 +171,8 @@ if (!function_exists('setSuccess')) {
     }
 }
 
-if (!function_exists('showErrorPage')) {
-    function showErrorPage(string $message)
+if (!function_exists('showTemplateErrorPage')) {
+    function showTemplateErrorPage(string $message)
     {
         $errorCode = 500;
         http_response_code($errorCode);
